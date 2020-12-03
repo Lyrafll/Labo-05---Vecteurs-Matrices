@@ -1,8 +1,13 @@
 #include <iostream>
+#include <cstdlib>
 #include "lib.h"
 #include "lib.cpp"
 
+using namespace std;
+
 int main() {
-   std::cout << "Hello, World!" << std::endl;
-   return 0;
+   
+
+
+   return EXIT_SUCCESS;
 }
