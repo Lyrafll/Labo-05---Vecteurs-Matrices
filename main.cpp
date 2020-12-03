@@ -1,13 +1,8 @@
 #include <iostream>
-#include <cstdlib>
-#include "lib.h"
-#include "lib.cpp"
-
-using namespace std;
+#include 'lib.h'
+#include 'lib.cpp'
 
 int main() {
-   
-
-
-   return EXIT_SUCCESS;
+   std::cout << "Hello, World!" << std::endl;
+   return 0;
 }
