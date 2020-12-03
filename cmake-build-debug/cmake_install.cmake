@@ -1,4 +1,4 @@
-# Install script for directory: C:/dev/c++/Labo 05
+# Install script for directory: C:/Users/Utilisateur/Desktop/labo/Labo-05---Vecteurs-Matrices
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/dev/c++/Labo 05/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Utilisateur/Desktop/labo/Labo-05---Vecteurs-Matrices/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
