@@ -136,15 +136,15 @@ int main() {
    	  << endl;
 
 	cout << "sommeDiagDG(vector3)" << endl;
-	int sumDiagDG;
+	int sumDiagDG = 0;
 	sommeDiagDG(v3, sumDiagDG);
 	cout << sumDiagDG << endl;
 	cout << endl
 		  << endl;
 
-/*   cout << "sommeDiagGD(vector3)" << endl;
-   int sumDiagGD = sommeDiagGD(v3);
+   cout << "sommeDiagGD(vector3)" << endl;
+   int sumDiagGD = 0;
+   sommeDiagGD(v3, sumDiagGD);
    cout << sumDiagGD << endl;
-*/
    return EXIT_SUCCESS;
 }

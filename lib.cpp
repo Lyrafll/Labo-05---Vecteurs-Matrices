@@ -136,25 +136,28 @@ void sortMatrice(Matrix& matrix){
 }
 
 //sommeDiagDG
+// returns the sum of the diagonal /
 bool sommeDiagDG(Matrix& matrix, int& sum) {
-	if (estCarree(matrix)) {
-		for (int i = matrix.size(); i >= 0; i--) {
-			sum = sum + matrix[i][i];
-		}
-		return true;
-	} else {
-		return false;
-	}
+
+   //if the matrix is not squared
+   if (!estCarree(matrix))
+      return false;
+
+   for (int i = matrix.size()-1; i >= 0; i--) {
+      sum = sum + matrix[i][matrix.size()-1-i];
+   }
+	return true;
 }
 
 //sommeDiagGD
+// returns the sum of the diagonal GD
 bool sommeDiagGD(Matrix& matrix, int& sum){
-	//if the matrix is squared
-	if (estCarree(matrix))
+	//if the matrix is not squared
+	if (!estCarree(matrix))
 		return false;
 
-	for(int i = 0; i < matrix.size(); i++){
-		int sum = sum + matrix[i][i];
+	for(int i = 0; i <= matrix.size()-1; i++){
+		sum = sum + matrix[i][i];
 	}
 	return true;
 }
