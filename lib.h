@@ -18,15 +18,20 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
 using Line = vector<int>;
 using Matrix = vector<Line>;
+
 //Operateur<<
+void Operateur(vector<int> vector);
 
 
 //Operateur<<
+void Operateur(vector<int> vector1, vector<int> vector2);
 
 //estCarree
 bool estCarree( Matrix& matrix);
@@ -35,11 +40,13 @@ bool estCarree( Matrix& matrix);
 bool estReguliere( Matrix& matrix);
 
 //minCol
+int minCol(Matrix& matrix);
 
 //sommeLigne
+vector<int> sommeLigne(Matrix& matrix);
 
 //vectSommeMin
-bool vectSommeMin(Matrix &matrix, Line& vector);
+vector<int> vectSommeMin(Matrix &matrix);
 
 //shuffleMatrice
 void shuffleMatrice(Matrix& matrix);

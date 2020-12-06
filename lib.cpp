@@ -11,9 +11,31 @@
 */
 #include "lib.h"
 
-//Operateur<<
 
 //Operateur<<
+void Operateur(vector<int> vector){
+
+	int size = vector.size();
+
+	for(int i = 0; i < size; ++i){
+		cout << vector[i] << " ";
+	}
+
+}
+
+//Operateur<<
+void Operateur(vector<int> vector1, vector<int> vector2){
+
+	for(int i = 0; i < vector1.size(); ++i){
+
+		for(int j = 0; j < vector2.size(); ++j){
+
+			cout << "(" << vector1[i] << " " << vector2[j] << ") ";
+		}
+	}
+
+
+}
 
 //estCarree
 // Returns if the matrix is squared
@@ -52,14 +74,29 @@ bool estReguliere( Matrix& matrix){
 }
 
 //minCol
+int minCol(Matrix& matrix){
+	int vsize = matrix[0].size();
+	for(auto row = matrix.begin(); row != matrix.end(); row++){
+		if(vsize > row->size())
+			vsize = row->size();
+	}
+	return vsize;
+}
 
 
 //sommeLigne
+vector<int> sommeLigne(Matrix& matrix){
+	vector<int> vectorSum;
+	for(auto row = matrix.begin(); row != matrix.end(); row++){
+		vectorSum.insert(vectorSum.end(), accumulate(row->begin(), row->end(), 0));
+	}
+	return vectorSum;
+}
+
 // returns the vector that has the smallest sum
-bool vectSommeMin(Matrix &matrix, Line& vector) {
+vector<int> vectSommeMin(Matrix &matrix) {
    int index, loop = 0;
    int vsum = accumulate(matrix[index].begin(), matrix[index].end(),0); //init value with the first vector
-
    for (auto row = matrix.begin(); row != matrix.end(); row++){
       if (accumulate(row->begin(), row->end(),0) < vsum){ // replace the smallest sum and index with the current one if sum< previous one
          vsum = accumulate(row->begin(), row->end(),0);
@@ -67,8 +104,7 @@ bool vectSommeMin(Matrix &matrix, Line& vector) {
       }
       loop++;
    }
-   vector = matrix[index];
-   return true;
+   return matrix[index];
 }
 
 //shuffleMatrice
