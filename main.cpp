@@ -31,31 +31,28 @@ using Matrix = vector<Line>;
 
 int main() {
 
-   // vector declarations. We are using Line as it is easier to read
-
-   Line line1(3, 1);
-   Line line2(3, 2);
-   Line line3(3, 3);
-   Line line4(3, 4);
-   Line line5(4, 4);
-   Line line6(4, 3);
-   Line line7(4, 4);
-   Line line8(5, 8);
-   Line line9(3, 9);
-   Line line10(2, 10);
-   Line line11 = {3, 2, 5};
-   Line line12 = {3, 2, 1};
-   Line line13 = {4, 3, 7};
-   Line line14 = {5, 6, 10};
+   vector<int> v1 = {1, 2, 3, 4, 5};
+   vector<int> v2 = {6, 7, 3, 8, 9};
 
    // matrix declaration
-   Matrix matrixSquared = {line1, line2, line3};
-   Matrix matrixNotSquared = {line1, line2, line3, line4};
-   Matrix matrixRegu = {line1, line2, line3, line4};
-   Matrix matrixNotRegu = {line1, line2, line3, line4, line5};
-   Matrix matrixSommeMin = {line4, line5, line6, line7};
-   Matrix matrixShuffle = {line8, line9, line10};
-   Matrix matrixSort = {line9, line3, line11, line12, line14, line13};
+   Matrix matrixSquared = {{1,1,1},{2,2,2},{3,3,3}};
+   Matrix matrixNotSquared = {{1,1,1},{2,2,2},{3,3,3},{4,4,4}};
+   Matrix matrixRegu = {{1,1,1},{2,2,2},{3,3,3},{4,4,4}};
+   Matrix matrixNotRegu = {{1,1},{2,2,2},{3,3},{4,4,4}};
+   Matrix matrixMinCol = {{1,1,1,1},{2,2},{3,3,3,3,3,3},{4,4,4}};
+   Matrix matrixSommeLigne = {{1,  2, 6, 3},{6,  3, 8, 3, 5},{64, 2, 8, 0, 53, 4}};
+   Matrix matrixSommeMin = {{4,4,4}, {6,7,2}, {17,1}, {8,7},{6,6}};
+   Matrix matrixShuffle = {{1,1,1}, {2,2,2}, {3,3,3},{4,4,4}};
+   Matrix matrixSort = {{4,4},{2},{5,7,8},{7,9},{3,10}};
+
+   cout << "Operateur (vector)" << endl;
+   Operateur(v1);
+   cout << endl
+        << endl;
+   cout << "Operateur (vector1, vector2)" << endl;
+   Operateur(v1, v2);
+   cout << endl << endl;
+
 
    // Boolean test, they should all be true! (so print)
    if (estCarree(matrixSquared))
@@ -66,6 +63,14 @@ int main() {
       cout << "est regu" << endl;
    if (!estReguliere(matrixNotRegu))
       cout << "est pas regu" << endl;
+
+   cout << "minCol (matrixMinCol) :" << endl;
+   cout << minCol(matrixMinCol) << endl << endl;
+
+   cout << "sommeLigne(matrixSommeLigne)" << endl;
+   vector<int> sum = sommeLigne(matrixSommeLigne);
+   for (int i:sum)
+      cout << i << " ";
 
    // =========================================== VECTSOMMEMIN TEST START ============================================
    // =========================================== EXPECTED RESULT = 4 4 4 ======================================
@@ -105,34 +110,5 @@ int main() {
       cout << endl;
    }
    // =========================================== SORT TEST END ============================================
-
-
-   vector<int> v1 = {1, 2, 3, 4, 5};
-   vector<int> v2 = {6, 7, 3, 8, 9};
-   vector<vector<int>> v3 = {{1,  2, 6, 3},
-                             {6,  3, 8, 3, 5},
-                             {64, 2, 8, 0, 53, 4}};
-
-   cout << "Operateur (vector)" << endl;
-   Operateur(v1);
-   cout << endl
-        << endl;
-
-   cout << "Operateur (vector1, vector2)" << endl;
-   Operateur(v1, v2);
-   cout << endl
-        << endl;
-
-   cout << "minCol (vector3)" << endl;
-   int nbr = minCol(v3);
-   cout << nbr << endl
-        << endl;
-
-   cout << "sommeLigne(vector3)" << endl;
-   vector<int> sum = sommeLigne(v3);
-   for (int i:sum)
-      cout << i << " ";
-
-
    return EXIT_SUCCESS;
 }
