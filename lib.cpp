@@ -136,5 +136,27 @@ void sortMatrice(Matrix& matrix){
 }
 
 //sommeDiagDG
+bool sommeDiagDG(Matrix& matrix, int& sum) {
+	if (estCarree(matrix)) {
+		for (int i = matrix.size(); i >= 0; i--) {
+			sum = sum + matrix[i][i];
+		}
+		return true;
+	} else {
+		return false;
+	}
+}
 
 //sommeDiagGD
+bool sommeDiagGD(Matrix& matrix, int& sum){
+	//if the matrix is squared
+	if (estCarree(matrix))
+		return false;
+
+	for(int i = 0; i < matrix.size(); i++){
+		int sum = sum + matrix[i][i];
+	}
+	return true;
+}
+
+

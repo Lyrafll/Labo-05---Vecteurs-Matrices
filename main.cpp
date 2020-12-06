@@ -109,9 +109,9 @@ int main() {
 
    vector<int> v1 = {1, 2, 3, 4, 5};
    vector<int> v2 = {6, 7, 3, 8, 9};
-   vector<vector<int>> v3 = {{1,  2, 6, 3},
-                             {6,  3, 8, 3, 5},
-                             {64, 2, 8, 0, 53, 4}};
+   vector<vector<int>> v3 = {{1,  2, 6},
+                             {6,  3, 8},
+                             {64, 2, 8}};
 
    cout << "Operateur (vector)" << endl;
    Operateur(v1);
@@ -132,7 +132,19 @@ int main() {
    vector<int> sum = sommeLigne(v3);
    for (int i:sum)
       cout << i << " ";
+   cout << endl
+   	  << endl;
 
+	cout << "sommeDiagDG(vector3)" << endl;
+	int sumDiagDG;
+	sommeDiagDG(v3, sumDiagDG);
+	cout << sumDiagDG << endl;
+	cout << endl
+		  << endl;
 
+/*   cout << "sommeDiagGD(vector3)" << endl;
+   int sumDiagGD = sommeDiagGD(v3);
+   cout << sumDiagGD << endl;
+*/
    return EXIT_SUCCESS;
 }
