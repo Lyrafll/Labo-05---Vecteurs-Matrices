@@ -13,26 +13,29 @@
 
 
 //Operateur<<
+// prints the vector in a (v1,v1,v3,...) format
 void Operateur(vector<int> vector){
 
 	int size = vector.size();
-
+   cout <<"(";
 	for(int i = 0; i < size; ++i){
-		cout << vector[i] << " ";
+		cout << vector[i] << (i<size-1? ", ":"");
 	}
-
+   cout<<")";
 }
 
 //Operateur<<
+// prints the vector in a [(..),(..),...] format
 void Operateur(vector<int> vector1, vector<int> vector2){
-
+   cout << "[";
 	for(int i = 0; i < vector1.size(); ++i){
 
 		for(int j = 0; j < vector2.size(); ++j){
 
-			cout << "(" << vector1[i] << " " << vector2[j] << ") ";
+			cout << "(" << vector1[i] << " " << vector2[j] << ")"<< (j<vector2.size()-1? ", ":"");
 		}
 	}
+   cout << "]";
 
 
 }
@@ -74,6 +77,7 @@ bool estReguliere( Matrix& matrix){
 }
 
 //minCol
+// returns the min amount of element in vectors in the matrix
 int minCol(Matrix& matrix){
 	int vsize = matrix[0].size();
 	for(auto row = matrix.begin(); row != matrix.end(); row++){
@@ -85,6 +89,7 @@ int minCol(Matrix& matrix){
 
 
 //sommeLigne
+// returns a vector with the sum of each vector inside the matrix
 vector<int> sommeLigne(Matrix& matrix){
 	vector<int> vectorSum;
 	for(auto row = matrix.begin(); row != matrix.end(); row++){
@@ -136,5 +141,30 @@ void sortMatrice(Matrix& matrix){
 }
 
 //sommeDiagDG
+// returns the sum of the diagonal /
+bool sommeDiagDG(Matrix& matrix, int& sum) {
+
+   //if the matrix is not squared
+   if (!estCarree(matrix))
+      return false;
+
+   for (int i = matrix.size()-1; i >= 0; i--) {
+      sum = sum + matrix[i][matrix.size()-1-i];
+   }
+	return true;
+}
 
 //sommeDiagGD
+// returns the sum of the diagonal GD
+bool sommeDiagGD(Matrix& matrix, int& sum){
+	//if the matrix is not squared
+	if (!estCarree(matrix))
+		return false;
+
+	for(int i = 0; i <= matrix.size()-1; i++){
+		sum = sum + matrix[i][i];
+	}
+	return true;
+}
+
+

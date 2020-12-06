@@ -44,6 +44,8 @@ int main() {
    Matrix matrixSommeMin = {{4,4,4}, {6,7,2}, {17,1}, {8,7},{6,6}};
    Matrix matrixShuffle = {{1,1,1}, {2,2,2}, {3,3,3},{4,4,4}};
    Matrix matrixSort = {{4,4},{2},{5,7,8},{7,9},{3,10}};
+   Matrix matrixsommeDiagDG = {{1,2,5}, {6,4,10},{7,2,4}};
+   Matrix matrixsommeDiagGD = {{1,2,5}, {6,4,10},{7,2,4}};
 
    cout << "Operateur (vector)" << endl;
    Operateur(v1);
@@ -55,16 +57,18 @@ int main() {
 
 
    // Boolean test, they should all be true! (so print)
+   cout << "estCarree(matrixSquared) :" << endl;
    if (estCarree(matrixSquared))
       cout << "est carree" << endl;
    if (!estCarree(matrixNotSquared))
       cout << "est pas carree" << endl;
+   cout << endl << "estCarree(matrixSquared) :" << endl;
    if (estReguliere(matrixRegu))
       cout << "est regu" << endl;
    if (!estReguliere(matrixNotRegu))
       cout << "est pas regu" << endl;
 
-   cout << "minCol (matrixMinCol) :" << endl;
+   cout << endl << "minCol (matrixMinCol) :" << endl;
    cout << minCol(matrixMinCol) << endl << endl;
 
    cout << "sommeLigne(matrixSommeLigne)" << endl;
@@ -74,7 +78,7 @@ int main() {
 
    // =========================================== VECTSOMMEMIN TEST START ============================================
    // =========================================== EXPECTED RESULT = 4 4 4 ======================================
-   cout << "------------ VectSommeMin test ------------" << endl;
+   cout << endl << "------------ VectSommeMin test ------------" << endl;
    vector<int> vSommeMin = vectSommeMin(matrixSommeMin);
    for (auto i = vSommeMin.begin(); i != vSommeMin.end(); ++i)
       cout << *i << " ";
@@ -110,5 +114,17 @@ int main() {
       cout << endl;
    }
    // =========================================== SORT TEST END ============================================
+
+
+   cout << endl <<"sommeDiagDG(matrixsommeDiagDG) :" << endl;
+   int sumDiagDG = 0;
+   sommeDiagDG(matrixsommeDiagDG, sumDiagDG);
+   cout << "Somme de la diagonale Droite-Gauche :" <<sumDiagDG << endl << endl;
+
+
+   cout << "sommeDiagGD(matrixsommeDiagGD) :" << endl;
+   int sumDiagGD = 0;
+   sommeDiagGD(matrixsommeDiagGD, sumDiagGD);
+   cout << "Somme de la diagonale Gauche-Droite :" << sumDiagGD << endl;
    return EXIT_SUCCESS;
 }

@@ -13,7 +13,7 @@
   ---------------------------------------------------------------------------
 */
 
-#include<vector>
+#include <vector>
 #include <numeric>
 #include <algorithm>
 #include <random>
@@ -56,5 +56,7 @@ void sortMatrice(Matrix& matrix);
 
 
 //sommeDiagDG
+bool sommeDiagDG(Matrix& matrix, int& sum);
 
 //sommeDiagGD
+bool sommeDiagGD(Matrix& matrix, int& sum);
