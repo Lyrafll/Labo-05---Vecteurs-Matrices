@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
+#include <algorithm>
+#include <numeric>
 
 using namespace std;
 
@@ -19,7 +21,7 @@ void Operateur(vector<int> vector1, vector<int> vector2);
 int minCol(Matrix& matrix);
 
 //sommeLigne
-vector<int> sommeLigne(vector<int> vector1, vector<int> vector2);
+vector<int> sommeLigne(Matrix& matrix);
 
 //vectSommeMin
 

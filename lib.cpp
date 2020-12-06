@@ -40,9 +40,12 @@ int minCol(Matrix& matrix){
 }
 
 //sommeLigne
-vector<int> sommeLigne(vector<int> vector1, vector<int> vector2){
-
-
+vector<int> sommeLigne(Matrix& matrix){
+	vector<int> vectorSum;
+	for(auto row = matrix.begin(); row != matrix.end(); row++){
+		vectorSum.insert(vectorSum.end(), accumulate(row->begin(), row->end(), 0));
+	}
+	return vectorSum;
 }
 
 //vectSommeMin

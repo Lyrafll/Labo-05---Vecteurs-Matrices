@@ -23,11 +23,12 @@ int main() {
 	cout << nbr << endl
 					<< endl;
 
-	cout << "sommeLigne" << endl;
-	vector<int> vectorSum = sommeLigne(v1, v2);
-	for(int i = 0; i < vectorSum.size(); i++){
-		cout << vectorSum[i];
-	}
+	cout << "sommeLigne(vector3)" << endl;
+	vector<int> sum = sommeLigne(v3);
+	for(int i:sum)
+		cout << i << " ";
+
+
 
    return EXIT_SUCCESS;
 }
